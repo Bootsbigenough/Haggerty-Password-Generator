@@ -5,6 +5,7 @@ function generatePassword() {
   var numbys = "0123456789"
   var spesh = "!@#$%^&*()"
   var characterBase = ""
+  var generatedPassword = ""
   var passwordLength = prompt ("Choose how long your password will be")
   var lowerCase = confirm ("Do you want Lowercase letters?")
   var upperCase = confirm ("Do you want Uppercase Letters?")
@@ -22,6 +23,11 @@ function generatePassword() {
    if(specialCharacters == true) {
     characterBase = characterBase + spesh
   }
+  for (let i = 0; i < passwordLength; i++) {
+    generatedPassword += characterBase.charAt(Math.floor(Math.random() * characterBase.length))
+    
+  }
+  return generatedPassword
 }
 
 // Get references to the #generate element
